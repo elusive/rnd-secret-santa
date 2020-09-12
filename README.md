@@ -1,12 +1,18 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Secret Santa Logo](./public/logo192.png)
+
+# RND Group Secret Santa Web App
+
+This application is designed using React hooks, SQLite and Material Design UI components. The application allows the employees to sign in and identify themselves. Once identified a random number [service](https://random.org) is used to acquire a truly random number used to select the user's secret santa assignment from the list of unassigned employees that remains at the time of the user signing in.
+
+You can run the application locally using _yarn_ or _npm_ with the instructions in this document.
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, you can run the web app using:
 
 ### `yarn start`
 
-Runs the app in the development mode.<br />
+This runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />

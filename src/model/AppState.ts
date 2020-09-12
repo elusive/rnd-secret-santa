@@ -1,4 +1,4 @@
-import { IUser } from './model/User';
+import { IUser } from './User';
 
 export interface IAppState {
     isKnownUser: boolean;

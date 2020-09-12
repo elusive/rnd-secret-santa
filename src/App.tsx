@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
+import * as React from 'react';
+import Assignment from './pages/assignment';
+import SignInSide from './pages/sign-up';
+import {
+    SantaContext,
+    DefaultSantaContextValue,
+} from './model/SantaContext';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+interface IProps {}
+
+const App: React.FC<IProps> = (props) => {
+    const [state, setState] = React.useState(
+        DefaultSantaContextValue.state,
+    );
+
+    return (
+        <SantaContext.Provider value={{ state, setState }}>
+            {state.isKnownUser ? <Assignment /> : <SignInSide />}
+        </SantaContext.Provider>
+    );
+};
 
 export default App;

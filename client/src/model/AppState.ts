@@ -1,10 +1,10 @@
 import { IUser } from './User';
 
 export interface IAppState {
-    isKnownUser: boolean;
+    isKnownUser?: boolean;
     currentUser: IUser | null;
-    isAssigned: boolean;
-    randomNumberUsed: number;
+    isAssigned?: boolean;
+    randomNumberUsed?: number;
 }
 
 export const DefaultAppState: IAppState = {

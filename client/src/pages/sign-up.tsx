@@ -8,11 +8,10 @@ import Checkbox from '@material-ui/core/Checkbox';
 import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
-import { Copyright } from '../components/copyright';
+import { Copyright } from '../components/copyright/copyright';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -36,7 +35,8 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
     },
     avatar: {
-        margin: theme.spacing(1),
+        height: theme.spacing(10),
+        width: theme.spacing(10),
         backgroundColor: theme.palette.secondary.main,
     },
     form: {
@@ -50,7 +50,9 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignInSide() {
     const classes = useStyles();
-
+    const handleSignUpSubmit = (
+        event: FormEvent<HTMLFormElement>,
+    ) => {};
     return (
         <Grid container component="main" className={classes.root}>
             <CssBaseline />
@@ -71,13 +73,22 @@ export default function SignInSide() {
                 square
             >
                 <div className={classes.paper}>
-                    <Avatar className={classes.avatar}>
-                        <LockOutlinedIcon />
-                    </Avatar>
                     <Typography component="h1" variant="h5">
-                        Sign in
+                        The RND Group
                     </Typography>
-                    <form className={classes.form} noValidate>
+                    <Avatar
+                        className={classes.avatar}
+                        variant="square"
+                        src="logo192.png"
+                    ></Avatar>
+                    <Typography component="h1" variant="h5">
+                        Secret Santa Sign Up
+                    </Typography>
+                    <form
+                        className={classes.form}
+                        onSubmit={handleSignUpSubmit}
+                        noValidate
+                    >
                         <TextField
                             variant="outlined"
                             margin="normal"
@@ -106,15 +117,6 @@ export default function SignInSide() {
                             label="RND Username"
                             id="uname"
                         />
-                        <FormControlLabel
-                            control={
-                                <Checkbox
-                                    value="remember"
-                                    color="primary"
-                                />
-                            }
-                            label="Remember me"
-                        />
                         <Button
                             type="submit"
                             fullWidth
@@ -122,7 +124,7 @@ export default function SignInSide() {
                             color="primary"
                             className={classes.submit}
                         >
-                            Sign In
+                            Sign Up
                         </Button>
                         <Grid container>
                             <Grid item xs>
@@ -132,7 +134,7 @@ export default function SignInSide() {
                             </Grid>
                             <Grid item>
                                 <Link href="#" variant="body2">
-                                    {"Don't have an account? Sign Up"}
+                                    {'Secret Santa 2020 Guidelines'}
                                 </Link>
                             </Grid>
                         </Grid>

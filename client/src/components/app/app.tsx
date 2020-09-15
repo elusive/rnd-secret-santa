@@ -1,11 +1,11 @@
 import * as React from 'react';
-import Assignment from './pages/assignment';
-import SignInSide from './pages/sign-up';
+import Assignment from '../../pages/assignment';
+import SignInSide from '../../pages/sign-up';
 import {
     AppContext,
     DefaultAppContextValue,
-} from './model/AppContext';
-import './App.css';
+} from '../../model/AppContext';
+import './app.css';
 
 interface IProps {}
 

@@ -20,3 +20,5 @@ export const Copyright: React.FC<IProps> = (props) => {
         </Typography>
     );
 };
+
+export default Copyright;

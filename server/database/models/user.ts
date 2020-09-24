@@ -6,7 +6,7 @@ export interface IUser {
     fname: string;
     lname: string;
     email: string;
-    password?: string;
+    uname?: string;
     isAssigned: boolean;
     assigneeId?: number;
 }
@@ -15,42 +15,40 @@ export class User extends Model implements IUser {
     public static readonly ModelName: string = 'User';
     public static readonly ModelNamePlural: string = 'Users';
     public static readonly TableName: string = 'Users';
-    public static readonly DefaultScope: FindOptions = {};
 
     public id!: number;
     public fname!: string;
     public lname!: string;
     public email!: string;
-    public password?: string;
+    public uname?: string;
     public isAssigned!: boolean;
     public assigneeId?: number;
 
-
     public static prepareInit(sequelize: Sequelize) {
-
         this.init(
             {
-                id: { 
+                id: {
                     type: DataTypes.NUMBER,
-                    primaryKey: true
+                    primaryKey: true,
                 },
-                fname: DataTypes.STRING(50),
-                lname: DataTypes.STRING(50),
-                email: DataTypes.STRING(50),
-                password: DataTypes.STRING(50),
+                fname: DataTypes.STRING,
+                lname: DataTypes.STRING,
+                email: DataTypes.STRING,
+                uname: DataTypes.STRING,
                 isAssigned: DataTypes.BOOLEAN,
-                assigneeId: DataTypes.NUMBER
+                assigneeId: DataTypes.NUMBER,
             },
             {
                 sequelize: sequelize,
                 tableName: this.TableName,
                 name: {
                     singular: this.ModelName,
-                    plural: this.ModelNamePlural
+                    plural: this.ModelNamePlural,
                 },
-                defaultScope: this.DefaultScope
                 comment: 'Model for an employee user',
             },
         );
     }
 }
+
+User.prepareInit(sequelize);

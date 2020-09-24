@@ -12,11 +12,10 @@ export const Copyright: React.FC<IProps> = (props) => {
             align="center"
         >
             {'Copyright © '}
-            <Link color="inherit" href="https://material-ui.com/">
-                SecretSanta - The RND Group, Inc.
-            </Link>{' '}
-            {new Date().getFullYear()}
-            {'.'}
+            {new Date().getFullYear()}{' '}
+            <Link color="inherit" href="https://rndgroup.com/">
+                Secret Santa Corp.
+            </Link>
         </Typography>
     );
 };

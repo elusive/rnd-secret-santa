@@ -5,5 +5,8 @@
         "client": "cd client && yarn start",
         "server": "nodemon server/index.js",
         "dev": "cd server && concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+    },
+    "devDependencies": {
+        "@types/node": "^14.10.2"
     }
 }

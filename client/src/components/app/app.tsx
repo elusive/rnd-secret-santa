@@ -10,13 +10,13 @@ import './app.css';
 interface IProps {}
 
 const App: React.FC<IProps> = (props) => {
-    const [state, setState] = React.useState(
-        DefaultAppContextValue.state,
+    const [appState, setAppState] = React.useState(
+        DefaultAppContextValue.appState,
     );
 
     return (
-        <AppContext.Provider value={{ state, setState }}>
-            {state.isKnownUser ? <Assignment /> : <SignInSide />}
+        <AppContext.Provider value={{ appState, setAppState }}>
+            {appState.isKnownUser ? <Assignment /> : <SignInSide />}
         </AppContext.Provider>
     );
 };

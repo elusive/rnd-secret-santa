@@ -1,3 +1,12 @@
+## 0.0.3 (2020-.9-14)
+
+-   FEATURES: Restructured app to include client and server folders. [`07f14cb1`]
+-   FEATURES: Began work on server api with express, sequelize config. [`9f4ac26e`]
+-   FEATURES: Updates to sign up form, add env files. [`9f4ac26e`]
+
+[`9f4ac26e`]: https://github.com/elusive/rnd-secret-santa/commit/9f4ac26ea674cff24846d8a6d803258f1527aaf7
+[`07f14cb1`]: https://github.com/elusive/rnd-secret-santa/commit/07f14cb11de911ebb8581a530f119b233798d847
+
 ## 0.0.2 (2020-09-12)
 
 -   DOCS: Update readme file logo and desc. [`dbcf1020`]

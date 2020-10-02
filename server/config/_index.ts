@@ -1,8 +1,8 @@
 import dotenv from 'dotenv';
 
-dotenv.config();
+dotenv.config({ path: 'config/.env' });
 
-export default {
+const config = {
     development: {
         dialect: process.env.dialect,
         storage: process.env.storage,
@@ -20,3 +20,7 @@ export default {
         dialect: 'postgres',
     },
 };
+
+var currentConfig = config[process.env.NODE_ENV ?? 'development'];
+console.log(currentConfig);
+export default currentConfig;

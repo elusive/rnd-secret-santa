@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Assignment from '../../pages/assignment';
 import SignInSide from '../../pages/sign-up';
 import {
     AppContext,
@@ -16,7 +15,7 @@ const App: React.FC<IProps> = (props) => {
 
     return (
         <AppContext.Provider value={{ appState, setAppState }}>
-            {appState.isKnownUser ? <Assignment /> : <SignInSide />}
+            <SignInSide />
         </AppContext.Provider>
     );
 };

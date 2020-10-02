@@ -1,4 +1,4 @@
-![Secret Santa Logo](./public/logo192.png)
+![Secret Santa Logo](./client/public/logo192.png)
 
 # RND Group Secret Santa Web App
 

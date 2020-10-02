@@ -4,20 +4,28 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const body_parser_1 = __importDefault(require("body-parser"));
-const cors_1 = __importDefault(require("cors"));
+const express_ejs_layouts_1 = __importDefault(require("express-ejs-layouts"));
+const connect_flash_1 = __importDefault(require("connect-flash"));
+const express_session_1 = __importDefault(require("express-session"));
+const _index_1 = __importDefault(require("./routes/_index"));
 const app = express_1.default();
-const corsOptions = {
-    origin: 'http://localhost:8081',
-};
-app.use(cors_1.default(corsOptions));
-app.use(body_parser_1.default.json());
-app.use(body_parser_1.default.urlencoded({ extended: true }));
-app.get('/', (req, res) => {
-    res.json({ message: 'Secret Santa server side.' });
+app.use(express_session_1.default({
+    secret: 'secret',
+    resave: true,
+    saveUninitialized: true,
+}));
+app.use(connect_flash_1.default());
+app.use((req, res, next) => {
+    res.locals.success_msg = req.flash('success_msg');
+    res.locals.error_msg = req.flash('error_msg');
+    res.locals.error = req.flash('error');
 });
+app.use(express_ejs_layouts_1.default);
+app.set('view engine', 'ejs');
+app.use(express_1.default.urlencoded({ extended: true }));
+app.use('/', _index_1.default);
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
-    console.log(`Secret Santa Server is running on port ${PORT}`);
+    console.log(`Secret Santa App is running on port ${PORT}`);
 });
 //# sourceMappingURL=index.js.map

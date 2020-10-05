@@ -1,8 +1,4 @@
-<<<<<<< HEAD:src/api.ts
 import db from './database';
-=======
-import db from '../database/_index';
->>>>>>> b72be5bb90ecce2f7314acd9fcf842bb1c5d5680:server/api/_index.ts
 
 export const getAll = () => {
     db.get('/api/users', (req: Request, res: Response) => {

@@ -1,3 +1,9 @@
+## 0.0.5 (2020-10-5)
+
+-   FEATURES: Large refactor to use ejs instead of react. Simpler and quicker.
+-   MISC: Consolidate site into server dir. Fix hotload for typescript.
+-   FEATURES: Styles now using bootswatch.com instead of material react UI.
+
 ## 0.0.4 (2020-9-24)
 
 -   FEATURES: Cleanup server side application and remove sequelize arch.

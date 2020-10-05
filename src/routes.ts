@@ -1,5 +1,5 @@
 import express from 'express';
-import * as userRepo from '../api/_index';
+import * as userRepo from './api';
 
 const router = express.Router();
 
@@ -13,7 +13,7 @@ router.post('/guide', (req, res) => {
     }
 
     let user = userRepo.getByUsername(uname);
-    if (!user) {
+    if (user == null || user == undefined) {
         errors.push({ msg: 'Username not found' });
     }
 

@@ -1,9 +1,9 @@
-import sqlite3 from 'sqlite3';
-import config from '../config/_index';
+import config from './config/_index';
+const sqlite3 = require('sqlite3').verbose();
 
-//const DB_SOURCE = ':inmemory';
+//const DB_SOURCE = ':memory:';
 
-const db = new sqlite3.Database(config.storage, (err) => {
+const db = new sqlite3.Database(config.storage, (err: Error) => {
     if (err) {
         // cannot open database
         console.error(err.message);
@@ -20,7 +20,7 @@ const db = new sqlite3.Database(config.storage, (err) => {
             CONSTRAINT uname_unique UNIQUE(uname),
             CONSTRAINT email_unique UNIQUE(email)
         )`,
-            (err) => {
+            (err: Error) => {
                 if (err) {
                     // table already exists do nothing
                 } else {

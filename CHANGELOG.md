@@ -8,8 +8,6 @@
 [`041b9faf`]: https://github.com/elusive/rnd-secret-santa/commit/041b9fafe8e77de49c684db17752e014398294bd
 [`67e80854`]: https://github.com/elusive/rnd-secret-santa/commit/67e80854acb9d765a8d45fd27881dfb4a9d2c8de
 
-[``]:
-
 ## 0.0.4 (2020-9-24)
 
 -   FEATURES: Cleanup server side application and remove sequelize arch.

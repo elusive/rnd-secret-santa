@@ -1,3 +1,4 @@
+<<<<<<< HEAD:Untitled
 <% if(typeof errors != 'undefined'){ %> <%
 errors.forEach(function(error) { %>
 <div
@@ -60,3 +61,6 @@ errors.forEach(function(error) { %>
     </button>
 </div>
 <% } %>
+=======
+<div>test</div>
+>>>>>>> b72be5bb90ecce2f7314acd9fcf842bb1c5d5680:server/views/partials/messages.ejs

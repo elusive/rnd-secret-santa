@@ -4,6 +4,7 @@ dotenv.config({ path: 'src/config/.env' });
 
 const config = {
     development: {
+        port: process.env.port,
         dialect: process.env.dialect,
         storage: process.env.storage,
     },

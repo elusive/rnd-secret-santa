@@ -1,8 +1,14 @@
 ## 0.0.5 (2020-10-5)
 
--   FEATURES: Large refactor to use ejs instead of react. Simpler and quicker.
+-   FEATURES: Large refactor to use ejs instead of react. Simpler and quicker. [`041b9faf`]
+-   FEATURES: Promote server app to root of repository as only app/site. [`67e80854`]
 -   MISC: Consolidate site into server dir. Fix hotload for typescript.
 -   FEATURES: Styles now using bootswatch.com instead of material react UI.
+
+[`041b9faf`]: https://github.com/elusive/rnd-secret-santa/commit/041b9fafe8e77de49c684db17752e014398294bd
+[`67e80854`]: https://github.com/elusive/rnd-secret-santa/commit/67e80854acb9d765a8d45fd27881dfb4a9d2c8de
+
+[``]:
 
 ## 0.0.4 (2020-9-24)
 

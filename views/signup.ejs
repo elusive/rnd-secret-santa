@@ -1,72 +1,69 @@
-<div class="row mt-5">
-    <div class="col-md-6 m-auto">
-        <div class="card card-body">
-            <h1 class="text-center mb-3">
-                <i class="fas fa-user-plus"></i> Secret Santa SignUp
-            </h1>
-            <% include('./partials/messages') %>
-            <form action="/users/signup" method="POST">
-                <div class="form-group">
-                    <label for="name">First Name</label>
-                    <input
-                        type="name"
-                        id="name"
-                        name="name"
-                        class="form-control"
-                        placeholder="Enter First Name"
-                        value="<%= typeof name != 'undefined' ? name : '' %>"
-                    />
-                    <label for="name">Last Name</label>
-                    <input
-                        type="name"
-                        id="name"
-                        name="name"
-                        class="form-control"
-                        placeholder="Enter Last Name"
-                        value="<%= typeof name != 'undefined' ? name : '' %>"
-                    />
+<div class="card-body" style="padding: 60px">
+<div style="margin="auto"><img src="public/logo192.png" class="avatar" /></div>
+    <h1 class="text-center mb-3">Secret Santa SignUp</h1>
+    <% include('./partials/messages') %>
+    <form action="/users/signup" method="POST">
+        <div class="form-group">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="addonA"
+                        >first</span
+                    >
                 </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        class="form-control"
-                        placeholder="Enter Email"
-                        value="<%= typeof email != 'undefined' ? email : '' %>"
-                    />
-                </div>
-                <button
-                    type="submit"
-                    class="btn btn-primary btn-block"
-                >
-                    Sign Me Up!
-                </button>
-            </form>
-            <p class="lead mt-4">
-               Already signed up, have a question? <a href="/users/guide">Santa's Guide</a></a>
-            </p>
+                <input
+                    type="text"
+                    id="fname"
+                    name="fname"
+                    class="form-control"
+                    aria-describedby="addonA"
+                    placeholder="Enter First Name"
+                    value="<%= typeof name != 'undefined' ? name : '' %>"
+                />
+            </div>
         </div>
         <div class="form-group">
-          <label for="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            class="form-control"
-            placeholder="Enter Email"
-            value="<%= typeof email != 'undefined' ? email : '' %>"
-          />
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="addonB"
+                        >last</span
+                    >
+                </div>
+                <input
+                    type="text"
+                    id="lname"
+                    name="lname"
+                    class="form-control"
+                    placeholder="Enter Last Name"
+                    aria-describedby="addonB"
+                    value="<%= typeof name != 'undefined' ? name : '' %>"
+                />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="addon1"
+                        >@</span
+                    >
+                </div>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-control"
+                    placeholder="Enter Email"
+                    aria-describedby="addon1"
+                    value="<%= typeof email != 'undefined' ? email : '' %>"
+                />
+            </div>
         </div>
         <button type="submit" class="btn btn-primary btn-block">
-          Sign Me Up!
+            Sign Me Up!
         </button>
-      </form>
-      <p class="lead mt-4">
+    </form>
+    <p class="lead mt-4">
         Already signed up, have a question?
+
         <a href="/users/guide">Santa's Guide</a>
-      </p>
-    </div>
-  </div>
+    </p>
 </div>

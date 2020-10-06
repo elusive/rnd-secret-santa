@@ -11,27 +11,30 @@ const app = express();
 app.use(expressLayouts);
 app.set('view engine', 'ejs');
 
+app.use(express.static('../public'));
+
 // parse request for content-type application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
 // express session
-/*app.use(
+app.use(
     session({
         secret: 'secret',
-        resave: true,
+        resave: false,
         saveUninitialized: true,
     }),
 );
 
-// connect flash
+// connect flasha
 app.use(flash());
 
 app.use((req, res, next) => {
-  res.locals.success_msg = req.flash("success_msg");
-  res.locals.error_msg = req.flash("error_msg");
-  res.locals.error = req.flash("error");
+    res.locals.success_msg = req.flash('success_msg');
+    res.locals.error_msg = req.flash('error_msg');
+    res.locals.error = req.flash('error');
+    next(); // w/o this the server hangs
 });
-*/
+
 // EJS
 app.use(expressLayouts);
 app.set('view engine', 'ejs');

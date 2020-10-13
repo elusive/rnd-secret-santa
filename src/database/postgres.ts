@@ -3,13 +3,13 @@ import config = require('./../config');
 import logger = require('./../utils/logger');
 
 const pgconfig = {
-        user: config.db.user,
-            database: config.db.database,
-                password: config.db.password,
-                    host: config.db.host,
-                        port: config.db.port,
-                            max: config.db.max,
-                                idleTimeoutMillis: config.db.idleTimeoutMillis
+    user: config.db.user,
+    database: config.db.database,
+    password: config.db.password,
+    host: config.db.host,
+    port: config.db.port,
+    max: config.db.max,
+    idleTimeoutMillis: config.db.idleTimeoutMillis
 }
 
 const pool = new Pool(pgconfig);
@@ -17,19 +17,19 @@ const pool = new Pool(pgconfig);
 logger.info(`DB Connection Settings: ${JSON.stringify(pgconfig)}`);
 
 pool.on('error', function (err:Error) {
-        logger.error(`idle client error, ${err.message} | ${err.stack}`);
+    logger.error(`idle client error, ${err.message} | ${err.stack}`);
 });
 
 /* 
- *  * Single Query to Postgres
- *   * @param sql: the query for store data
- *    * @param data: the data to be stored
- *     * @return result
- *      */
+ *  Single Query to Postgres
+ *  @param sql: the query for store data
+ *  @param data: the data to be stored
+ *  @return result
+ */
 export const sqlToDB = async (sql:string, data:string[][]) => {
-        logger.debug(`sqlToDB() sql: ${sql} | data: ${data}`);
-            let result : QueryResult;
-                try {
+    logger.debug(`sqlToDB() sql: ${sql} | data: ${data}`);
+    let result : QueryResult;
+    try {
                             result = await pool.query(sql, data);
                                     return result;
                                         } catch (error) {

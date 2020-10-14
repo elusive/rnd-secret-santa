@@ -25,7 +25,7 @@ app.use(
     }),
 );
 
-// connect flasha
+// connect flash
 app.use(flash());
 
 app.use((req, res, next) => {

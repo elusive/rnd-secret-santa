@@ -1,20 +1,16 @@
 import express from 'express';
-import * as userRepo from './api';
 
 const router = express.Router();
 
 router.get('/', (req, res) => res.render('signup'));
+
 router.post('/guide', (req, res) => {
-    const { fname, lname, uname } = req.body;
+    const { fname, lname, email } = req.body;
+    console.log(`fname=${!fname ? 'NOT': fname}, lname=${!lname?'NOT':lname}, email=${email}`);
     let errors = [];
 
-    if (!fname || !lname || !uname) {
+    if (!fname || !lname || !email) {
         errors.push({ msg: 'Please enter all fields' });
-    }
-
-    let user = userRepo.getByUsername(uname);
-    if (user == null || user == undefined) {
-        errors.push({ msg: 'Username not found' });
     }
 
     if (errors.length > 0) {
@@ -22,11 +18,13 @@ router.post('/guide', (req, res) => {
             errors,
             fname,
             lname,
-            uname,
+            email
         });
     } else {
         res.render('guide', {
-            user,
+            fname: fname,
+            lname: lname,
+            email: email
         });
     }
 });

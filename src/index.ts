@@ -4,16 +4,13 @@ import flash from 'connect-flash';
 import session from 'express-session';
 import router from './routes';
 import config from './config/_index';
+import path from 'path';
 
+
+// express instance
 const app = express();
-
-// EJS
-app.use(expressLayouts);
-app.set('view engine', 'ejs');
-
-app.use(express.static('../public'));
-
-// parse request for content-type application/x-www-form-urlencoded
+console.log(__dirname);
+app.use('/public', express.static(path.resolve(__dirname, '../public')));
 app.use(express.urlencoded({ extended: true }));
 
 // express session
@@ -39,9 +36,6 @@ app.use((req, res, next) => {
 app.use(expressLayouts);
 app.set('view engine', 'ejs');
 
-// parse request for content-type application/x-www-form-urlencoded
-app.use(express.urlencoded({ extended: true }));
-
 // add the routes
 app.use('/', router);
 
@@ -49,4 +43,5 @@ app.use('/', router);
 const PORT = config.port || 8080;
 app.listen(PORT, () => {
     console.log(`Secret Santa App is running on port ${PORT}`);
+    debugger;
 });

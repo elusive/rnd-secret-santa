@@ -1,4 +1,4 @@
-import config from './config/_index';
+import config from '../config/_index';
 const sqlite3 = require('sqlite3').verbose();
 
 //const DB_SOURCE = ':memory:';

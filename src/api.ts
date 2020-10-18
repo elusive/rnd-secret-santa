@@ -1,4 +1,4 @@
-import db from './database';
+import db from './database/sqlite';
 
 export const getAll = () => {
     db.get('/api/users', (req: Request, res: Response) => {

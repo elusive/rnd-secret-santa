@@ -1,3 +1,8 @@
+## 0.0.6 (2020-10-18)
+-   FEATURES: Decided on api. Post to save signup user. Add insert and get all.
+-   FEATURES: Add text for guide and thank you for signup.
+
+
 ## 0.0.5 (2020-10-5)
 
 -   FEATURES: Large refactor to use ejs instead of react. Simpler and quicker. [`041b9faf`]

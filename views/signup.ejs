@@ -1,12 +1,16 @@
-<div class="card-body" style="padding: 60px">
-    <div class="text-center"><img src="public/logo192.png" class="avatar" /></div>
-    <h1 class="text-center mb-3">Secret Santa SignUp</h1>
-    <% include('./partials/messages') %>
-        <form action="/guide" method="POST">
-            <div class="form-group">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="addonA">first</span
+<div class="conitainer-fluid" style="height: 100%">
+    <div class="row">
+        <div class="xmas-splash col-lg-7"></div>
+        <div class="xmas-signup col-lg-5 shadow">
+            <div class="card-body" style="padding: 60px">
+                <div class="text-center"><img src="public/logo192.png" class="avatar" /></div>
+                <h1 class="text-center mb-3">Secret Santa SignUp</h1>
+                <% include('./partials/messages') %>
+                    <form action="/guide" method="POST">
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="addonA">first</span
                     >
                 </div>
                 <input
@@ -66,3 +70,6 @@
         <a href="/users/guide">Santa's Guide</a>
     </p>
 </div>
+                </div>
+            </div>
+        </div>

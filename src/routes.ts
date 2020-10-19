@@ -4,6 +4,10 @@ import * as api from './api';
 const router = express.Router();
 
 router.get('/', (req, res) => res.render('signup'));
+router.get('/jg/report', (req, res) => {
+    const users = api.getAll();
+    res.send(JSON.stringify(users));
+});
 router.get('/guide', (req, res) => res.render('guide'));
 router.post('/guide', (req, res) => {
     const { fname, lname, email } = req.body;
@@ -33,8 +37,6 @@ router.post('/guide', (req, res) => {
                     email
                 });
             }});
-
-        console.log(api.getAll());
         console.log('Insert successful.');
         res.render('guide', {
                 fname: fname,

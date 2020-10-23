@@ -27,7 +27,7 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
-       env:
-        NODE_ENV: "test"
-        dialect: "sqlite"
-        storage: ":memory:"
+      env:
+       NODE_ENV: "test"
+       dialect: "sqlite"
+       storage: ":memory:"

@@ -1,74 +1,72 @@
-<div class="conitainer-fluid" style="height: 100%">
+<div class="container-fluid" style="height: 100%">
     <div class="row">
         <div class="xmas-splash col-lg-7"></div>
         <div class="xmas-signup col-lg-5 shadow">
             <div class="card-body" style="padding: 60px">
                 <div class="text-center"><img src="public/logo192.png" class="avatar" /></div>
                 <h1 class="text-center mb-3">Secret Santa SignUp</h1>
-                <% include('./partials/messages') %>
+                <%- include('./partials/messages') %>
                     <form action="/guide" method="POST">
                         <div class="form-group">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="addonA">first</span
-                    >
+                                    <span class="input-group-text" id="addonA">first</span>
+                                </div>
+                                <input
+                                    type="text"
+                                    id="fname"
+                                    name="fname"
+                                    class="form-control"
+                                    aria-describedby="addonA"
+                                    placeholder="Enter First Name"
+                                    value="<%= typeof fname != 'undefined' ? fname : '' %>"
+                                />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="addonB"
+                                        >last</span
+                                    >
+                                </div>
+                                <input
+                                    type="text"
+                                    id="lname"
+                                    name="lname"
+                                    class="form-control"
+                                    placeholder="Enter Last Name"
+                                    aria-describedby="addonB"
+                                    value="<%= typeof lname != 'undefined' ? lname : '' %>"
+                                />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="addon1"
+                                        >@</span
+                                    >
+                                </div>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    class="form-control"
+                                    placeholder="Enter Email"
+                                    aria-describedby="addon1"
+                                    value="<%= typeof email != 'undefined' ? email : '' %>"
+                                />
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            Sign Me Up!
+                        </button>
+                    </form>
+                    <p class="lead mt-4">
+                    Already signed up, <a href="/guide">view the guide</a>.
+                    </p>
                 </div>
-                <input
-                    type="text"
-                    id="fname"
-                    name="fname"
-                    class="form-control"
-                    aria-describedby="addonA"
-                    placeholder="Enter First Name"
-                    value="<%= typeof name != 'undefined' ? name : '' %>"
-                />
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="addonB"
-                        >last</span
-                    >
-                </div>
-                <input
-                    type="text"
-                    id="lname"
-                    name="lname"
-                    class="form-control"
-                    placeholder="Enter Last Name"
-                    aria-describedby="addonB"
-                    value="<%= typeof name != 'undefined' ? name : '' %>"
-                />
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="addon1"
-                        >@</span
-                    >
-                </div>
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    class="form-control"
-                    placeholder="Enter Email"
-                    aria-describedby="addon1"
-                    value="<%= typeof email != 'undefined' ? email : '' %>"
-                />
-            </div>
-        </div>
-        <button type="submit" class="btn btn-primary btn-block">
-            Sign Me Up!
-        </button>
-    </form>
-    <p class="lead mt-4">
-        Already signed up, have a question?
-        <a href="mailto:jgilliland@rndgroup.com">Just Ask</a>
-    </p>
-</div>
                 </div>
             </div>
         </div>

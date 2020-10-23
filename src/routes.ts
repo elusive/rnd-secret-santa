@@ -4,11 +4,14 @@ import * as api from './api';
 const router = express.Router();
 
 router.get('/', (req, res) => res.render('signup'));
-router.get('/jg/report', (req, res) => {
+router.get('/report', (req, res) => {
     const users = api.getAll();
     res.send(JSON.stringify(users));
 });
-router.get('/guide', (req, res) => res.render('guide'));
+router.get('/guide', (req, res) => {
+    res.locals.isUser = false;
+    res.render('guide');
+});
 router.post('/guide', (req, res) => {
     const { fname, lname, email } = req.body;
     console.log(`fname=${!fname ? 'NOT': fname}, lname=${!lname?'NOT':lname}, email=${email}`);

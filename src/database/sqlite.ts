@@ -1,4 +1,4 @@
-import config from '../config/_index';
+import config from '../config/index';
 const sqlite3 = require('sqlite3').verbose();
 
 const db = new sqlite3.Database(config.storage, (err: Error) => {

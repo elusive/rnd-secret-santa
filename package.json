@@ -1,7 +1,7 @@
 {
-    "name": "secret-santa-server",
+    "name": "secret-santa-site",
     "version": "0.0.1",
-    "description": "Back end api for secret santa website.",
+    "description": "Christmas 2020 secret santa website for RND Group.",
     "main": "dist/index.js",
     "author": "jgilliland@rndgroup.com",
     "license": "MIT",
@@ -9,11 +9,12 @@
     "scripts": {
         "clean": "rm -rf dist",
         "watch": "nodemon --watch src --watch views --exec ts-node src/index.ts -e ts,json,ejs",
-        "copy-assets": "ts-node ./src/copyPublic.ts",
-        "prestart": "yarn build",
-        "start": "yarn watch",
-        "build": "yarn clean && tsc",
-        "debug": "yarn build && node inspect dist/index.js"
+        "copy-assets": "cp -r ./public/ ./dist/public/ && cp -r ./views/ ./dist/views/",
+        "prestart": "npm run build",
+        "start": "npm run watch",
+        "build": "npm run clean && tsc && npm run copy-assets",
+        "debug": "nodemon --watch src --watch views -e ts,json,ejs --inspect dist/index.js",
+        "test": "mocha -r ts-node/register ./test/* --exit"
     },
     "dependencies": {
         "body-parser": "^1.19.0",
@@ -33,9 +34,13 @@
         "@types/cors": "^2.8.7",
         "@types/express": "^4.17.8",
         "@types/express-session": "^1.17.0",
+        "@types/mocha": "^8.0.3",
+        "@types/supertest": "^2.0.10",
+        "mocha": "^8.2.0",
         "nodemon": "^2.0.4",
         "shelljs": "^0.8.4",
         "sqlite3": "^5.0.0",
+        "supertest": "^5.0.0",
         "ts-node": "^9.0.0",
         "typescript": "~3.7.2"
     }

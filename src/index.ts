@@ -3,7 +3,7 @@ import expressLayouts from 'express-ejs-layouts';
 import flash from 'connect-flash';
 import session from 'express-session';
 import router from './routes';
-import config from './config/_index';
+import config from './config/index';
 import path from 'path';
 
 
@@ -45,3 +45,5 @@ app.listen(PORT, () => {
     console.log(`Secret Santa App is running on port ${PORT}`);
     debugger;
 });
+
+export default app;

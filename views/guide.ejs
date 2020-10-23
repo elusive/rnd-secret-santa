@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-lg-9 m-auto">
                     <h5>Thanks for signing up
-                        <%= fname %>! </h5>
+                        <%= (isUser) ? fname : ''  %>! </h5>
                     <p>This year we are doing a Secret Santa gift exchange in lieu of our traditional White Elephant party. We hope that everyone will participate for fun, but of course this is a completely voluntary activity.
                     </p>
                     <p>Now for a bit of background. Secret Santa is a Christmas tradition where members of a group, whether friends, family, or co-workers, will draw random names to become someone's <em>Secret Santa</em>. The <em>Secret Santa</em> then gets
@@ -16,13 +16,16 @@
                     <div class="card card-body col-lg-9 m-auto" style="margin-top: 30px">
                         <ol>
                             <h4>Secret Santa Guidelines:</h4>
+                        <% if (isUser) { %>
                             <li>Sign up (you just did!)</li>
                             <li>Receive your email at
-                                <a href="mailto:<%= email %>">
-                                    <%= email %>
-                                </a>
+                                <strong>
+                                    <a href="mailto:<%= email %>">
+                                        <%= email %>
+                                    </a>
                                 </strong>
-                                </string> with your randomly assigned recipient. [The drawing will be done randomly once signups are complete.]</li>
+                                with your randomly assigned recipient. [The drawing will be done randomly once signups are complete.]</li>
+                        <% } %>
                             <li>Next <em>try</em> to learn something about your assigned gift recipient's likes or hobbies in order to get them a more thoughtful gift. But, you have to do so without asking them directly and without letting anyone know whom
                                 your recipient is. If you can't figure out a specific gift then feel free to just get a fun present that anyone would enjoy! This is for fun after all... </li>
                             <li>Either way, once you figure out a gift then go out an get it, but remember the spending limit is <strong>$25</strong>.
@@ -34,7 +37,7 @@
                     <p>For some ideas on good secret santa gifts that are under the $25 limit take a look at <a href="https://www.businessinsider.com/secret-santa-gifts" target="new">
             this article</a>. This is just a helpful suggestion if you are not able to come up with something on your own. </p>
                     <div class="text-center" style="margin-bottom: 100px">
-                        <a href="/">Back to Sign Up Page</a>
+                        <a href="/">Back to Sign Up Page</a> | <a href="mailto:jgilliland@rndgroup.com">Questions?</a>
                     </div>
                     </form>
                 </div>

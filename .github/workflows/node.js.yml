@@ -31,3 +31,11 @@ jobs:
        NODE_ENV: "test"
        dialect: "sqlite"
        storage: ":memory:"
+
+    - uses: SamKirkland/FTP-Deploy-Action@3.1.1
+      with:
+        ftp-server: ftp://ftp.rndgroup.com/
+        ftp-username: ${{ secrets.FTP_USER }}
+        ftp-password: ${{ secrets.FTP_PASS }}
+
+

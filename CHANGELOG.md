@@ -1,3 +1,11 @@
+## 0.0.7
+-   FEATURES: Fixed include for messages partial. [`0c50ac2a`]
+-   FEATURES: Added route for GET guide and link. [`0c50ac2a`]
+-   MISC: Added github action for building node js app.  [`eabb3d26`]
+
+[`eabb3d26`]: https://github.com/elusive/rnd-secret-santa/commit/eabb3d2647a0b087763e6966b73d4f3bb63722cf
+[`0c50ac2a`]: https://github.com/elusive/rnd-secret-santa/commit/0c50ac2a29a199fc7df3cbb24b4d4dc16fee6133
+
 ## 0.0.6 (2020-10-18)
 -   FEATURES: Decided on api. Post to save signup user. Add insert and get all.
 -   FEATURES: Add text for guide and thank you for signup.

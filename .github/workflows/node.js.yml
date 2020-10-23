@@ -22,8 +22,9 @@ jobs:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       env:
-        dialect: sqlite
-        storage: :memory:
+        NODE_ENV: "test"
+        dialect: "sqlite"
+        storage: ":memory:"
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}

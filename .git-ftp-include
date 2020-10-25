@@ -1,1 +1,7 @@
-
+!api.js
+!index.js
+!route.js
+!public/
+!views/
+!config/
+!database/

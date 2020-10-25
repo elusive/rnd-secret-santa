@@ -1,7 +1,7 @@
-!api.js
-!index.js
-!route.js
-!public/
-!views/
-!config/
-!database/
+!dist/api.js
+!dist/index.js
+!dist/route.js
+!dist/public/
+!dist/views/
+!dist/config/
+!dist/database/

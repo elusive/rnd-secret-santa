@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-lg-9 m-auto">
                     <h5>Thanks for signing up
-                        <%= (isUser) ? fname : ''  %>! </h5>
+                        <%= (typeof fname != 'undefined') ? fname : ''  %>! </h5>
                     <p>This year we are doing a Secret Santa gift exchange in lieu of our traditional White Elephant party. We hope that everyone will participate for fun, but of course this is a completely voluntary activity.
                     </p>
                     <p>Now for a bit of background. Secret Santa is a Christmas tradition where members of a group, whether friends, family, or co-workers, will draw random names to become someone's <em>Secret Santa</em>. The <em>Secret Santa</em> then gets
@@ -16,7 +16,7 @@
                     <div class="card card-body col-lg-9 m-auto" style="margin-top: 30px">
                         <ol>
                             <h4>Secret Santa Guidelines:</h4>
-                        <% if (isUser) { %>
+                        <% if (typeof fname != 'undefined') { %>
                             <li>Sign up (you just did!)</li>
                             <li>Receive your email at
                                 <strong>

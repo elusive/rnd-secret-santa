@@ -1,3 +1,11 @@
+## 0.0.8 (2020-10-25)
+-   FEATURES: Updated github actions to deploy from dist folder.    [`77c6e7c3`]
+-   FEATURES: Finalized git-ftp configuration files for deployment. [`1f47810e`]
+
+[`77c6e7c3`]: https://github.com/elusive/rnd-secret-santa/commit/77c6e7c3884e17ba61c8bf4628bf377a6cbddfb9
+[`1f47810e`]: https://github.com/elusive/rnd-secret-santa/commit/1f47310e939ba8aa5b877bd4dc64ad1265cbd46b
+
+
 ## 0.0.7
 -   FEATURES: Fixed include for messages partial. [`0c50ac2a`]
 -   FEATURES: Added route for GET guide and link. [`0c50ac2a`]

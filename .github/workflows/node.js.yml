@@ -48,4 +48,4 @@ jobs:
         ftp-username: ${{ secrets.FTP_USER }}
         ftp-password: ${{ secrets.FTP_PASS }}  
         local-dir: dist
-        git-ftp-args: --dry-run
+        git-ftp-args: --all --dry-run

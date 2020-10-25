@@ -1,5 +1,4 @@
 .git-ftp-ignore
-.git-ftp-include
 .gitignore
 
 ./views/*

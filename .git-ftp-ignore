@@ -1,10 +1,7 @@
 .git-ftp-ignore
 .gitignore
 
-./views/*
 ./test/*
-./src/*
-./public/*
 ./node_modules/*
 ./.git/*
 ./.github/*

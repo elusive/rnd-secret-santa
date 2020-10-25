@@ -1,0 +1,3 @@
+src/api.ts:dist/api.js
+src/index.ts:dist/index.js
+src/routs.ts:dist/routes.js

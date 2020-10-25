@@ -47,4 +47,4 @@ jobs:
         ftp-server: ftp://ftp.rndgroup.com/
         ftp-username: ${{ secrets.FTP_USER }}
         ftp-password: ${{ secrets.FTP_PASS }}  
-        git-ftp-args: --all
+        local-dir: ./dist/

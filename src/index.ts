@@ -10,7 +10,7 @@ import path from 'path';
 // express instance
 const app = express();
 console.log(__dirname);
-app.use('/public', express.static(path.resolve(__dirname, '../public')));
+app.use('/public', express.static(path.resolve(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 
 // express session

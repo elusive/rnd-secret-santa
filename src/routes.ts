@@ -9,6 +9,7 @@ router.get('/report', (req, res) => {
     res.send(JSON.stringify(users));
 });
 router.get('/guide', (req, res) => {
+    const isUser = false;
     res.render('guide');
 });
 router.post('/guide', (req, res) => {

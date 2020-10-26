@@ -4,9 +4,10 @@ import * as api from './api';
 const router = express.Router();
 
 router.get('/', (req, res) => res.render('signup'));
-router.get('/report', (req, res) => {
-    const users = api.getAll();
-    res.send(JSON.stringify(users));
+router.get('/report', async (req, res) => {
+    const users = await api.getAll();
+    res.header("Content-Type",'application/json');
+    res.json(users);
 });
 router.get('/guide', (req, res) => {
     const isUser = false;

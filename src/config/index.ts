@@ -10,7 +10,7 @@ const config = {
     },
     test: {
         dialect: process.env.dialect,
-        storage: process.env.storage,
+        storage: ":memory:",
     },
     production: {
         username: process.env.username,

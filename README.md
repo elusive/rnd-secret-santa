@@ -1,3 +1,6 @@
+<svg fill="none" viewBox="0 0 400 400" width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+    <foreignObject width="100%" height="100%">
+        <div xmlns="http://www.w3.org/1999/xhtml">
 <style type="text/css">
 img {
     display: flex;
@@ -11,8 +14,10 @@ img {
     border-radius: 50%;
 }
 </style>
-
-![Secret Santa Logo](./public/logo192.png)
+<img src="./public/logo192.png" alt="Secret Santa Logo" />
+        </div>
+    </foreignObject>
+</svg>
 
 # Secret Santa Web App 
 

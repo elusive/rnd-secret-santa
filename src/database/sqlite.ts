@@ -1,9 +1,8 @@
-import config from '../config/index';
-const sqlite3 = require('sqlite3').verbose();
+import config from '../config/index'
+import { Database } from 'sqlite3'
 
 
-
-const db = new sqlite3.Database(config.storage, (err: Error) => {
+const db = new Database(config.Database, (err: Error) => {
     if (err) {
         console.error(err.message);
         throw err;

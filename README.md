@@ -1,12 +1,26 @@
-![Secret Santa Logo](./client/public/logo192.png)
+<style type="text/css">
+img {
+    display: flex;
+    justify-items: right;
+    align-items: right;
+    float: middle;
+    vertical-align: middle;
+    width: 90px;
+    height: 90px;
+    margin: auto auto;
+    border-radius: 50%;
+}
+</style>
 
-# RND Group Secret Santa Web App
+![Secret Santa Logo](./public/logo192.png)
+
+# Secret Santa Web App 
 
 This application is designed using React hooks, SQLite and Material Design UI components. The application allows the employees to sign in and identify themselves. Once identified a random number [service](https://random.org) is used to acquire a truly random number used to select the user's secret santa assignment from the list of unassigned employees that remains at the time of the user signing in.
 
 You can run the application locally using _yarn_ or _npm_ with the instructions in this document.
 
-## Available Scripts
+## Getting Started
 
 In the project directory, you can run the web app using:
 

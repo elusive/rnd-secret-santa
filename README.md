@@ -1,4 +1,4 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
+![Secret Santa Logo](./public/logo192.png)
 
 # Secret Santa Web App 
 

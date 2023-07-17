@@ -1,21 +1,4 @@
-<svg fill="none" viewBox="0 0 200 200" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
-    <foreignObject width="100%" height="100%">
-            <style>
-            img {
-                display: flex;
-                justify-items: right;
-                align-items: right;
-                float: middle;
-                vertical-align: middle;
-                width: 90px;
-                height: 90px;
-                margin: auto auto;
-                border-radius: 50%;
-            }
-            </style>
-            <img src="./public/logo192.png" alt="Secret Santa Logo" />
-    </foreignObject>
-</svg>
+<div xmlns="http://www.w3.org/1999/xhtml">
 
 # Secret Santa Web App 
 

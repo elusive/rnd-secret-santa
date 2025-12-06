@@ -32,6 +32,12 @@ app.use((req, res, next) => {
     next(); // w/o this the server hangs
 });
 
+// error middleware
+app.use(function (err: any, req: express.Request, res: express.Response, next: express.NextFunction) {
+    console.error(err.stack);
+    res.status(500).send(`Something broke! ${err.message}`);
+});
+
 // EJS
 app.use(expressLayouts);
 app.set('view engine', 'ejs');
@@ -40,7 +46,7 @@ app.set('view engine', 'ejs');
 app.use('/', router);
 
 // set port and listen for requests
-const PORT = config.port || 8080;
+const PORT = Number(config.PORT) || 8080;
 app.listen(PORT, () => {
     console.log(`Secret Santa App is running on port ${PORT}`);
     debugger;

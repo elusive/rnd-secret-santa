@@ -2,7 +2,9 @@ import config from '../config/index'
 import { Database } from 'sqlite3'
 
 
-const db = new Database(config.Database, (err: Error) => {
+const dbPath = config.SQLITE_FILE || 'db.sqlite';
+
+const db = new Database(dbPath, (err: Error) => {
     if (err) {
         console.error(err.message);
         throw err;

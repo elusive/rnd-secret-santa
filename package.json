@@ -8,18 +8,20 @@
     "private": false,
     "scripts": {
         "clean": "rm -rf dist",
-        "watch": "nodemon --watch src --watch views --exec ts-node src/index.ts -e ts,json,ejs",
+        "watch": "tsx watch ./src --include ./views",
         "copy-assets": "cp -r ./public/ ./dist/public/ && cp -r ./views/ ./dist/views/",
         "prestart": "npm run build",
-        "start": "npm run watch",
+        "start": "npm run start:prod",
         "build": "npm run clean && tsc && npm run copy-assets",
-        "debug": "nodemon --watch src --watch views -e ts,json,ejs --inspect dist/index.js",
-        "test": "NODE_ENV=test mocha -r ts-node/register ./test/* --exit"
+        "dev": "dotenv -e .env.development -- tsx watch ./src --include ./views --inspect",
+        "start:prod": "dotenv -e .env.production -- node ./dist/index.js",
+        "test": "NODE_ENV=test mocha -r --import tsx ./test/* --exit"
     },
     "dependencies": {
         "body-parser": "^1.19.0",
         "config": "^3.3.1",
         "connect-flash": "^0.1.1",
+        "corepack": "^0.34.5",
         "cors": "^2.8.5",
         "dotenv": "^8.2.0",
         "dotenv-cli": "^4.0.0",
@@ -40,11 +42,10 @@
         "@types/supertest": "^2.0.10",
         "chai": "^4.2.0",
         "mocha": "^8.2.0",
-        "nodemon": "^2.0.4",
         "shelljs": "^0.8.4",
         "sqlite3": "^5.0.0",
         "supertest": "^5.0.0",
-        "ts-node": "^10.8.1",
+        "tsx": "^4.21.0",
         "typescript": "^4.7.2"
     }
 }

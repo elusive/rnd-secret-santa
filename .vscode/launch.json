@@ -4,30 +4,34 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-    {
-        "name": "Attach",
-        "port": 9229,
-        "request": "attach",
-        "skipFiles": [
-            "<node_internals>/**"
-        ],
-        "type": "pwa-node"
-    },
-
         {
-            "name": "Debug: Nodemon",
+            "name": "Attach to Process",
             "request": "attach",
             "type": "node",
             "processId": "${command:PickProcess}",
             "restart": true,
             "protocol": "inspector"
         },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "Launch Program",
-            "skipFiles": ["<node_internals>/**"],
-            "program": "dist/index.js"
-        }
+       
+    {
+        "type": "node",
+        "request": "launch",
+        "name": "Launch Program",
+        "program": "${workspaceFolder}/src/index.ts",
+        "cwd": "${workspaceFolder}",
+        "args": ["--env", "development"],
+    },
+    {
+      "name": "Debug TSX Server",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "tsx",
+      "args": ["${workspaceFolder}/src/index.tsx", "--inspect"], // Change to your main file
+      "cwd": "${workspaceFolder}",
+      "internalConsoleOptions": "openOnSessionStart",
+      "skipFiles": ["<node_internals>/**", "node_modules/**"],
+      "sourceMaps": true
+    }
+
     ]
 }

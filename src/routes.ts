@@ -2,6 +2,12 @@ import express from 'express';
 import * as api from './api';
 
 const router = express.Router();
+router.get('/api/christmas-image', async (req, res) => {
+    const imageUrl = await api.getUnsplashUrl('cozy-christmas', 1900, 1080);
+    console.log(`Fetched image URL: ${imageUrl}`);
+    res.json({ imageUrl });
+});
+
 
 router.get('/', (req, res) => res.render('signup'));
 router.get('/report', async (req, res) => {

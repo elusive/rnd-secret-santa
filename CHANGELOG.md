@@ -1,3 +1,24 @@
+## [0.0.9] - 2025-12-06
+
+### Added
+- Add env-based config and DB adapter.
+- Add new launch configurations for vscode.
+- Added reporting script to output console list and counts.
+
+### Changed
+- Remove yarn lock file per use of only npm now.
+- Update env config setup.
+- Cleanup for using sqlite instead of postgres for simpler eg. app.
+- Update reporting to pull data.
+- Update views with dates and deadline information.
+
+### Fixed
+- (api) Fix the unsplash url to be populated with api call result per deprecation of unsplash source url support.
+- Fix db get all to use promise. Add test for db get all.
+
+### Docs
+- Update README.md
+
 ## 0.0.8 (2020-10-25)
 -   FEATURES: Updated github actions to deploy from dist folder.    [`77c6e7c3`]
 -   FEATURES: Finalized git-ftp configuration files for deployment. [`1f47810e`]

@@ -1,6 +1,6 @@
 import config from '../config/index'
 import { Database } from 'sqlite3'
-
+import * as schema from './sql/schema'; 
 
 const dbPath = config.SQLITE_FILE || 'db.sqlite';
 
@@ -11,24 +11,13 @@ const db = new Database(dbPath, (err: Error) => {
     } else {
         console.log('Connected to the SQLite database');
         db.run(
-            `CREATE TABLE elves (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            fname text,
-            lname text,
-            assignee text UNIQUE,
-            email text UNIQUE,
-            CONSTRAINT assignee_unique UNIQUE(assignee),
-            CONSTRAINT email_unique UNIQUE(email)
-        )`,
+           schema.CREATE_ELVES_TABLE,
             (err: Error) => {
-                if (err) {
-                    // table already exists do nothing
-                } else {
-                    // table just created, insert seed data
-                    db.run('INSERT INTO elves (fname, lname, email) VALUES(?, ?, ?)', [
+                if (!err) {
+                    db.run(schema.ELF_INSERT_SQL, [
                         'John',
                         'Gilliland',
-                        'jgilliland@therndgroup.com',
+                        'johncgilliland@gmail.com',
                     ]);
                 }
             },
